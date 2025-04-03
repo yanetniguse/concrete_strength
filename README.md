@@ -51,7 +51,7 @@
 
 ## 🏆 About the Author
 👩‍💻 **Yanet Niguse Tesfay** – A **Software Engineer & ML Enthusiast** passionate about AI-driven solutions for real-world problems.  
-🔗 [Portfolio](https://yanet-niguse-tesfay.vercel.app/) | [LinkedIn]([https://www.linkedin.com/in/yanet-niguse-tesfay-6b85552b7/](https://www.linkedin.com/in/yanetniguse7/)  
+🔗 [Portfolio](https://yanet-niguse-tesfay.vercel.app/) | [LinkedIn]([https://www.linkedin.com/in/yanet-niguse-tesfay-6b85552b7/](https://www.linkedin.com/in/yanetniguse7/))  
 
 ---
 📢 **Looking for collaborations, internships, or job opportunities?** Let’s connect! 🚀
