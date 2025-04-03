@@ -48,11 +48,7 @@
    ```bash
    streamlit run app.py
    ```
-📊 Analysis & Key Takeaways
-
-🛠️ Problem Statement
-
-Concrete strength testing is traditionally time-consuming and expensive, requiring lab experiments that delay construction projects. The goal of this ML model is to predict concrete compressive strength efficiently based on material composition, reducing costs and optimizing material usage.
+📊 Analysis 
 
 ⚠️ Challenges Faced
 
@@ -63,28 +59,6 @@ Concrete strength testing is traditionally time-consuming and expensive, requiri
 3️⃣ Overfitting Concerns: Ridge Regression shrunk coefficients to mitigate overfitting, but testing non-linear models could enhance performance.
 
 4️⃣ Hyperparameter Tuning: Finding the best alpha (λ) for Ridge & Lasso required cross-validation to avoid bias.
-
-
-📈 Model Improvements Made
-
-✅ Tried Ridge & Lasso Regression to evaluate the best feature selection approach.
-
-✅ Feature Engineering: Standardized numerical values to improve model stability.
-
-✅ Hyperparameter Optimization using GridSearchCV for Ridge & Lasso to find the best alpha values.
-
-✅ Retained All Features as removing ‘coarse_agg’ didn’t significantly improve RMSE.
-
-
-🚀 Future Improvements
-
-🔹 Test Non-Linear Models: Try Random Forest, XGBoost, or Neural Networks for better accuracy.
-
-🔹 Feature Engineering Enhancements: Use Principal Component Analysis (PCA) or Polynomial Features to reduce dimensionality.
-
-🔹 Expand Dataset: Gathering more real-world construction data could improve generalization.
-
-🔹 Deploy API for Industry Use: Expose this model as an API for engineers to integrate into construction workflows.
 
 
 🏆 Final Conclusion
