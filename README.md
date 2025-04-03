@@ -15,6 +15,8 @@
 - **🔗 Try it now:** [Concrete Strength Prediction App](https://yanetniguse-concrete-strength-app-esbush.streamlit.app/)
 - **📂 GitHub Repository:** [View Code](https://github.com/yanetniguse/concrete_strength)
 - **📖 ML Training Notebook:** [Google Colab](https://colab.research.google.com/drive/1d8rFpiZDlpEJ2DoZfCPQq5sTdQerg_2H?usp=sharing)
+![image](https://github.com/user-attachments/assets/dde397fb-5d5d-44ba-a359-b1ee6aab782b)
+
 
 ## 🧪 Machine Learning Analysis
 ### **1️⃣ Feature Selection & Importance**
