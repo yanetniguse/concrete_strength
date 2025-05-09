@@ -41,3 +41,44 @@ if st.sidebar.button("Predict Strength"):
     
     except Exception as e:
         st.error(f"Error: {e}")
+
+with st.expander("🧠 Machine Learning Analysis & Methodology"):
+    st.markdown("""
+### 🔍 Feature Selection & Importance
+
+- **Lasso Regression**: Helped identify the most impactful features:
+  - Cement
+  - Slag
+  - Fly Ash
+  - Water
+  - Superplasticizer
+  - Fine Aggregate
+  - Age
+
+- **Ridge Regression**: Retained **all features** but **reduced individual feature impact** to prevent overfitting.
+
+**Key Findings**:
+- **Cement**, **Water**, and **Age** showed the **highest influence** on concrete strength.
+
+---
+
+### 📈 Model Performance Summary
+
+- **Baseline RMSE (Ridge Regression)**: 9.80 MPa  
+- **Lasso Regression RMSE**: 9.82 MPa  
+
+> 🔎 No significant performance gain from feature elimination — all variables contribute meaningfully.
+
+**Final Model Choice**: **Ridge Regression with all features**
+
+""")
+st.image("images/feature_importance.png", caption="Feature Importance from Lasso")
+st.image("residual plot.png"", caption="Residual Plot – Ridge Regression")
+
+
+st.markdown("""
+---
+© 2025 **Yanet Niguse Tesfay**  
+📧 Contact: [yanetesfay@example.com](mailto:yanetesfay@example.com)
+""")
+
