@@ -34,6 +34,7 @@
 ✔️ **Feature selection didn’t significantly improve Ridge, confirming the importance of all variables.**
 ✔️ **Exploring non-linear models like XGBoost or Random Forest could improve accuracy.**
 ✔️ **Further feature engineering (e.g., PCA or ElasticNet Regression) might refine performance.**
+![image](https://github.com/user-attachments/assets/b4a7ccf4-0e22-412d-b3f7-ee36fff38fb5)
 
 ## 💻 How to Run Locally
 1. Clone the repository:  
