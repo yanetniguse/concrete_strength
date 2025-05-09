@@ -43,7 +43,7 @@ if st.sidebar.button("Predict Strength"):
         st.error(f"Error: {e}")
 
 with st.expander("🧠 Machine Learning Analysis & Methodology"):
-    st.markdown("""
+    st.markdown(""" 
 ### 🔍 Feature Selection & Importance
 
 - **Lasso Regression**: Helped identify the most impactful features:
@@ -70,7 +70,6 @@ with st.expander("🧠 Machine Learning Analysis & Methodology"):
 > 🔎 No significant performance gain from feature elimination — all variables contribute meaningfully.
 
 **Final Model Choice**: **Ridge Regression with all features**
-
 """)
 st.image("feature_importance.png", caption="Feature Importance from Lasso")
 st.image("residual_plot.png", caption="Residual Plot – Ridge Regression")
@@ -99,10 +98,9 @@ if predicted_strength is not None:  # Ensure prediction is made before optimizat
         st.write(f"- Cement: **{suggested_cement:.1f} kg**")
         st.write(f"- Water: **{suggested_water:.1f} kg** (Try to maintain water-to-cement ratio around 0.45–0.55)")
         st.info("These are heuristic suggestions. Always validate with real testing for critical projects.")
-        
+
 # The copyright and contact info should be in a comment or string to prevent syntax issues.
 st.markdown("""
 © 2025 **Yanet Niguse Tesfay**  
 📧 Contact: [yanetesfay@example.com](mailto:yanetesfay@example.com)
 """)
-
