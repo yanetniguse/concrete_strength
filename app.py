@@ -99,7 +99,9 @@ if predicted_strength is not None:  # Ensure prediction is made before optimizat
         st.write(f"- Cement: **{suggested_cement:.1f} kg**")
         st.write(f"- Water: **{suggested_water:.1f} kg** (Try to maintain water-to-cement ratio around 0.45–0.55)")
         st.info("These are heuristic suggestions. Always validate with real testing for critical projects.")
-
+        
+# The copyright and contact info should be in a comment or string to prevent syntax issues.
+st.markdown("""
 © 2025 **Yanet Niguse Tesfay**  
 📧 Contact: [yanetesfay@example.com](mailto:yanetesfay@example.com)
 """)
