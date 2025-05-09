@@ -73,7 +73,7 @@ with st.expander("🧠 Machine Learning Analysis & Methodology"):
 
 """)
 st.image("images/feature_importance.png", caption="Feature Importance from Lasso")
-st.image("residual plot.png"", caption="Residual Plot – Ridge Regression")
+st.image("residual plot.png", caption="Residual Plot – Ridge Regression")
 
 
 st.markdown("""
