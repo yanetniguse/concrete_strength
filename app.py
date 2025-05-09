@@ -22,6 +22,9 @@ age = st.sidebar.number_input("Age (days):", min_value=1, max_value=365, value=2
 # Prepare input features in the correct format (as a 2D array with 8 features)
 features = np.array([[cement, slag, fly_ash, water, superplasticizer, coarse_agg, fine_agg, age]])
 
+# Initialize the predicted_strength variable as None
+predicted_strength = None
+
 # Predict strength
 if st.sidebar.button("Predict Strength"):
     try:
