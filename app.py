@@ -72,8 +72,8 @@ with st.expander("🧠 Machine Learning Analysis & Methodology"):
 **Final Model Choice**: **Ridge Regression with all features**
 
 """)
-st.image("images/feature_importance.png", caption="Feature Importance from Lasso")
-st.image("residual plot.png", caption="Residual Plot – Ridge Regression")
+st.image("feature_importance.png", caption="Feature Importance from Lasso")
+st.image("residual_plot.png", caption="Residual Plot – Ridge Regression")
 
 
 st.markdown("""
