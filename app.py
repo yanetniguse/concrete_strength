@@ -22,11 +22,11 @@ age = st.sidebar.number_input("Age (days):", min_value=1, max_value=365, value=2
 # Prepare input features in the correct format (as a 2D array with 8 features)
 features = np.array([[cement, slag, fly_ash, water, superplasticizer, coarse_agg, fine_agg, age]])
 
-# Initialize the predicted_strength variable as None
+# Initialize predicted_strength variable
 predicted_strength = None
 
-# Predict strength
-if st.sidebar.button("Predict Strength"):
+# Prediction Section
+if st.sidebar.button("Predict Concrete Strength"):
     try:
         # Predict the concrete strength
         predicted_strength = model.predict(features)[0]
@@ -78,11 +78,11 @@ st.image("feature_importance.png", caption="Feature Importance from Lasso")
 st.image("residual_plot.png", caption="Residual Plot – Ridge Regression")
 
 
-# Target Strength Optimization Section
-if predicted_strength is not None:  # Ensure prediction is made before optimization
-    target_strength = st.number_input("Enter your target compressive strength (MPa):", min_value=0.0, max_value=100.0, value=30.0)
+# Target Strength Optimization Section - Independent from Prediction
+target_strength = st.number_input("Enter your target compressive strength (MPa):", min_value=0.0, max_value=100.0, value=30.0)
 
-    if st.button("Suggest Mix Adjustments"):
+if st.button("Suggest Mix Adjustments"):
+    if predicted_strength is not None:
         diff = target_strength - predicted_strength
         st.write(f"🔍 Difference from predicted: `{diff:.2f} MPa`")
 
@@ -101,7 +101,9 @@ if predicted_strength is not None:  # Ensure prediction is made before optimizat
         st.write(f"- Cement: **{suggested_cement:.1f} kg**")
         st.write(f"- Water: **{suggested_water:.1f} kg** (Try to maintain water-to-cement ratio around 0.45–0.55)")
         st.info("These are heuristic suggestions. Always validate with real testing for critical projects.")
-
+    else:
+        st.warning("Please predict the concrete strength first before adjusting the mix.")
+    
 # The copyright and contact info should be in a comment or string to prevent syntax issues.
 st.markdown("""
 © 2025 **Yanet Niguse Tesfay**  
