@@ -22,22 +22,23 @@ age = st.sidebar.number_input("Age (days):", min_value=1, max_value=365, value=2
 # Prepare input features in the correct format (as a 2D array with 8 features)
 features = np.array([[cement, slag, fly_ash, water, superplasticizer, coarse_agg, fine_agg, age]])
 
-# Initialize predicted_strength variable
-predicted_strength = None
+# Initialize predicted_strength in session_state if not already set
+if "predicted_strength" not in st.session_state:
+    st.session_state.predicted_strength = None
 
 # Prediction Section
 if st.sidebar.button("Predict Concrete Strength"):
     try:
         # Predict the concrete strength
-        predicted_strength = model.predict(features)[0]
+        st.session_state.predicted_strength = model.predict(features)[0]
         
         # Display predicted strength
-        st.success(f"Predicted Concrete Strength: {predicted_strength:.2f} MPa")
+        st.success(f"Predicted Concrete Strength: {st.session_state.predicted_strength:.2f} MPa")
         
         # Provide recommendations based on predicted strength
-        if predicted_strength < 20:
+        if st.session_state.predicted_strength < 20:
             st.warning("Recommendation: The predicted strength is quite low. Consider increasing the cement content or reducing the water-to-cement ratio. Adding superplasticizer may also help improve the strength.")
-        elif 20 <= predicted_strength <= 40:
+        elif 20 <= st.session_state.predicted_strength <= 40:
             st.info("Recommendation: The predicted strength is moderate and may be suitable for general construction, but improvements can be made by adjusting the mix proportions or curing for a longer duration.")
         else:
             st.success("Recommendation: The predicted strength is excellent and suitable for high-strength applications like bridges or high-rise buildings. Ensure proper curing to maintain this level of strength.")
@@ -82,8 +83,8 @@ st.image("residual_plot.png", caption="Residual Plot – Ridge Regression")
 target_strength = st.number_input("Enter your target compressive strength (MPa):", min_value=0.0, max_value=100.0, value=30.0)
 
 if st.button("Suggest Mix Adjustments"):
-    if predicted_strength is not None:
-        diff = target_strength - predicted_strength
+    if st.session_state.predicted_strength is not None:
+        diff = target_strength - st.session_state.predicted_strength
         st.write(f"🔍 Difference from predicted: `{diff:.2f} MPa`")
 
         if diff < -5:
