@@ -76,6 +76,29 @@ st.image("feature_importance.png", caption="Feature Importance from Lasso")
 st.image("residual_plot.png", caption="Residual Plot – Ridge Regression")
 
 
+st.markdown("### 🎯 Optimize for Target Strength")
+target_strength = st.number_input("Enter your target compressive strength (MPa):", min_value=0.0, max_value=100.0, value=30.0)
+
+if st.button("Suggest Mix Adjustments"):
+    diff = target_strength - predicted_strength
+    st.write(f"🔍 Difference from predicted: `{diff:.2f} MPa`")
+
+    if diff < -5:
+        st.warning("Your current mix is **overdesigned**. You may reduce cement content or superplasticizer to save cost.")
+        suggested_cement = cement - 30
+        suggested_water = water + 10
+    elif diff > 5:
+        st.warning("Your current mix is **underperforming**. Consider increasing cement or reducing water content.")
+        suggested_cement = cement + 30
+        suggested_water = max(water - 10, 100)
+    else:
+        st.success("Your mix is close to the target! Minor adjustments may still improve quality.")
+
+    st.markdown("#### 🔧 Suggested Adjusted Mix")
+    st.write(f"- Cement: **{suggested_cement:.1f} kg**")
+    st.write(f"- Water: **{suggested_water:.1f} kg** (Try to maintain water-to-cement ratio around 0.45–0.55)")
+    st.info("These are heuristic suggestions. Always validate with real testing for critical projects.")
+
 st.markdown("""
 ---
 © 2025 **Yanet Niguse Tesfay**  
