@@ -87,6 +87,10 @@ if st.button("Suggest Mix Adjustments"):
         diff = target_strength - st.session_state.predicted_strength
         st.write(f"🔍 Difference from predicted: `{diff:.2f} MPa`")
 
+        # Initialize suggested cement and water values
+        suggested_cement = cement  # Default to current cement
+        suggested_water = water    # Default to current water
+
         if diff < -5:
             st.warning("Your current mix is **overdesigned**. You may reduce cement content or superplasticizer to save cost.")
             suggested_cement = cement - 30
